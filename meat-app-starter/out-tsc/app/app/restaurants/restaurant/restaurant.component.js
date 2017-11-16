@@ -7,20 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+import { Component, Input } from '@angular/core';
+var RestaurantComponent = (function () {
+    function RestaurantComponent() {
     }
-    HeaderComponent.prototype.ngOnInit = function () {
+    RestaurantComponent.prototype.ngOnInit = function () {
     };
-    return HeaderComponent;
+    return RestaurantComponent;
 }());
-HeaderComponent = __decorate([
+__decorate([
+    Input(),
+    __metadata("design:type", Object)
+], RestaurantComponent.prototype, "restaurant", void 0);
+RestaurantComponent = __decorate([
     Component({
-        selector: 'mt-header',
-        templateUrl: './header.component.html'
+        selector: 'mt-restaurant',
+        templateUrl: './restaurant.component.html'
     }),
     __metadata("design:paramtypes", [])
-], HeaderComponent);
-export { HeaderComponent };
-//# sourceMappingURL=header.component.js.map
+], RestaurantComponent);
+export { RestaurantComponent };
+//# sourceMappingURL=restaurant.component.js.map

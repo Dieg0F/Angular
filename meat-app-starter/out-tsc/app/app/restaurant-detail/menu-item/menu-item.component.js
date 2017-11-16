@@ -7,20 +7,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+var MenuItemComponent = (function () {
+    function MenuItemComponent() {
+        this.add = new EventEmitter();
     }
-    HeaderComponent.prototype.ngOnInit = function () {
+    MenuItemComponent.prototype.ngOnInit = function () {
     };
-    return HeaderComponent;
+    MenuItemComponent.prototype.emitAddEvent = function () {
+        this.add.emit(this.menuItem);
+    };
+    return MenuItemComponent;
 }());
-HeaderComponent = __decorate([
+__decorate([
+    Input(),
+    __metadata("design:type", Object)
+], MenuItemComponent.prototype, "menuItem", void 0);
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], MenuItemComponent.prototype, "add", void 0);
+MenuItemComponent = __decorate([
     Component({
-        selector: 'mt-header',
-        templateUrl: './header.component.html'
+        selector: 'mt-menu-item',
+        templateUrl: './menu-item.component.html'
     }),
     __metadata("design:paramtypes", [])
-], HeaderComponent);
-export { HeaderComponent };
-//# sourceMappingURL=header.component.js.map
+], MenuItemComponent);
+export { MenuItemComponent };
+//# sourceMappingURL=menu-item.component.js.map

@@ -7,20 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+import { Component, Input } from '@angular/core';
+var ReviewComponent = (function () {
+    function ReviewComponent() {
     }
-    HeaderComponent.prototype.ngOnInit = function () {
+    ReviewComponent.prototype.ngOnInit = function () {
     };
-    return HeaderComponent;
+    return ReviewComponent;
 }());
-HeaderComponent = __decorate([
+__decorate([
+    Input(),
+    __metadata("design:type", Object)
+], ReviewComponent.prototype, "review", void 0);
+ReviewComponent = __decorate([
     Component({
-        selector: 'mt-header',
-        templateUrl: './header.component.html'
+        selector: 'mt-review',
+        templateUrl: './review.component.html'
     }),
     __metadata("design:paramtypes", [])
-], HeaderComponent);
-export { HeaderComponent };
-//# sourceMappingURL=header.component.js.map
+], ReviewComponent);
+export { ReviewComponent };
+//# sourceMappingURL=review.component.js.map

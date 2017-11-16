@@ -7,37 +7,33 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-    <div class="table-responsive">
+    <div *ngIf="!items().length">
+      <p class="text-center">
+        Seu Carrinho esta Vazio
+      </p>
+    </div>
+    <div class="table-responsive" *ngIf="items().length">
         <table class="table">
           <tbody>
-          <tr>
-            <th style="width:60%">Cerveja:</th>
+          <tr *ngFor="let item of items()">
+            <th>({{item.quantity}}x) {{item.menuItem.name}}</th>
 
-            <td class="text-right">R$ 6,00</td>
-
-          </tr>
-          <tr>
-            <th>Pork Burger</th>
-
-            <td class="text-right">R$ 22,00</td>
-          </tr>
-          <tr>
-            <th>Frete:</th>
-
-            <td class="text-right">R$ 8,00</td>
+            <td class="text-right">{{item.menuItem.price | currency : 'BRL' : true}}</td>
+            <td><a (click)="removeItem(item)" class="btn btn-sm danger"> <span class="fa fa-remove"></span> </a><br>
+            <a (click)="removeQuantity(item.menuItem)" class="btn btn-sm danger"> <span class="fa fa-minus"></span> </a></td>
           </tr>
           <tr>
             <th>Total:</th>
 
-            <td class="text-right">R$ 80,90</td>
+            <td class="text-right">{{total() | currency: 'BRL' : true}}</td>
           </tr>
         </tbody></table>
       </div>
   </div>
-  <div class="box-footer">
+  <div class="box-footer" *ngIf="items().length">
     <div class="pull-right">
-      <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
-      <a href="order.html" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
+      <button type="button" (click)="clear()" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
+      <a [routerLink]="['/order']" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
     </div>
   </div>
 </div>

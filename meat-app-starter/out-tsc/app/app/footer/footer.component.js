@@ -8,19 +8,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+var FooterComponent = (function () {
+    function FooterComponent() {
     }
-    HeaderComponent.prototype.ngOnInit = function () {
+    FooterComponent.prototype.ngOnInit = function () {
     };
-    return HeaderComponent;
+    return FooterComponent;
 }());
-HeaderComponent = __decorate([
+FooterComponent = __decorate([
     Component({
-        selector: 'mt-header',
-        templateUrl: './header.component.html'
+        selector: 'mt-footer',
+        templateUrl: './footer.component.html'
     }),
     __metadata("design:paramtypes", [])
-], HeaderComponent);
-export { HeaderComponent };
-//# sourceMappingURL=header.component.js.map
+], FooterComponent);
+export { FooterComponent };
+//# sourceMappingURL=footer.component.js.map
